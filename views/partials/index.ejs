@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <main>
+    <section class="hero" aria-label="Sambutan toko">
+      <div class="hero-content">
+        <h1>Belanja Sembako Gampang, Nggak Perlu Nunggu Balasan WA</h1>
+        <p>Cek stok dan harga produk kapan saja, atau tanya langsung ke fitur "Tanya AI" kami untuk pertanyaan seputar toko.</p>
+        <a href="/produk" class="btn-primary">Lihat Semua Produk</a>
+      </div>
+    </section>
+
+    <section class="preview-produk" aria-labelledby="preview-heading">
+      <h2 id="preview-heading">Produk Pilihan</h2>
+      <div class="product-grid">
+        <% previewProducts.forEach(function(product) { %>
+          <article class="product-card">
+            <h3><%= product.name %></h3>
+            <p class="product-category"><%= product.category %></p>
+            <p class="product-price">Rp<%= product.price.toLocaleString('id-ID') %></p>
+            <p class="product-stock">Stok: <%= product.stock %></p>
+            <a href="/produk/<%= product.id %>" class="btn-secondary">Lihat Detail</a>
+          </article>
+        <% }); %>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
