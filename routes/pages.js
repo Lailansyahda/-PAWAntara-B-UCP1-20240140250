@@ -1,7 +1,7 @@
 // routes/pages.js
 const express = require("express");
 const router = express.Router();
-const products = require("../data/products");
+const products = require("../data/product");
 
 router.get("/", (req, res) => {
   const previewProducts = products.slice(0, 4);
