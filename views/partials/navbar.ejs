@@ -1,0 +1,19 @@
+<header class="site-header">
+  <nav class="navbar" aria-label="Navigasi utama">
+    <div class="navbar-brand">
+      <a href="/" class="brand-link">🛒 Toko Ariesta</a>
+    </div>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="/" class="<%= activePage === 'beranda' ? 'active' : '' %>">Beranda</a></li>
+      <li><a href="/produk" class="<%= activePage === 'produk' ? 'active' : '' %>">Produk</a></li>
+      <li><a href="/tanya-ai" class="<%= activePage === 'tanya-ai' ? 'active' : '' %>">Tanya AI</a></li>
+    </ul>
+  </nav>
+</header>
