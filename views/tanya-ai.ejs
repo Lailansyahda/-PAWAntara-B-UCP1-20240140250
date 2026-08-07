@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <main>
+    <section class="tanya-ai-section" aria-labelledby="tanya-ai-heading">
+      <h1 id="tanya-ai-heading">Tanya AI</h1>
+      <p>
+        Punya pertanyaan seputar stok, harga, atau pengantaran? Tanyakan di sini.
+        <em>(Balasan otomatis akan aktif di Sprint 2.)</em>
+      </p>
+
+      <div class="chat-box" id="chatBox" aria-live="polite">
+        <p class="chat-bubble chat-bubble-bot">Halo! Ada yang bisa saya bantu seputar produk Toko Ariesta?</p>
+      </div>
+
+      <form id="chatForm" class="chat-form" aria-label="Form tanya AI">
+        <div class="form-group">
+          <label for="pertanyaan">Pertanyaan kamu</label>
+          <textarea id="pertanyaan" name="pertanyaan" rows="3" placeholder="cth: gula sekilo berapa?" aria-label="Tulis pertanyaan untuk AI" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Kirim</button>
+      </form>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

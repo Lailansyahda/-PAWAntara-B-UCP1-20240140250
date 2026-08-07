@@ -55,4 +55,11 @@ router.get("/produk/:id", (req, res) => {
   });
 });
 
+router.get("/tanya-ai", (req, res) => {
+  res.render("tanya-ai", {
+    title: "Tanya AI - Toko Sembako Ariesta",
+    activePage: "tanya-ai"
+  });
+});
+
 module.exports = router;
