@@ -1,0 +1,360 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #1f2933;
+  background-color: #fdfaf5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== Navbar ===== */
+.site-header {
+  background-color: #2f7d32;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  position: relative;
+}
+
+.brand-link {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: #2f7d32;
+}
+
+.nav-menu.show {
+  display: flex;
+}
+
+.nav-menu li {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.nav-menu a {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: #fff;
+}
+
+.nav-menu a.active {
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: linear-gradient(135deg, #eaf6ea, #fdfaf5);
+  padding: 3rem 1.25rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero p {
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+  color: #52606d;
+}
+
+/* ===== Buttons ===== */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #2f7d32;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  color: #2f7d32;
+  border: 2px solid #2f7d32;
+  margin-top: 0.5rem;
+}
+
+/* ===== Product grid (CSS Grid) ===== */
+.preview-produk,
+.product-list {
+  padding: 2rem 1.25rem;
+}
+
+.preview-produk h2 {
+  margin-bottom: 1rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #e4e7eb;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.product-category {
+  text-transform: capitalize;
+  color: #7b8794;
+  font-size: 0.85rem;
+}
+
+.product-price {
+  font-weight: bold;
+  color: #2f7d32;
+}
+
+/* ===== Filter form (Flexbox) ===== */
+.produk-header {
+  padding: 2rem 1.25rem 0;
+}
+
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-top: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #e4e7eb;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.5rem;
+  border: 1px solid #cbd2d9;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.empty-state {
+  padding: 2rem 0;
+  text-align: center;
+  color: #7b8794;
+}
+
+/* ===== Detail produk & not found ===== */
+.product-detail,
+.not-found {
+  max-width: 640px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #e4e7eb;
+}
+
+.not-found {
+  text-align: center;
+}
+
+/* ===== Tanya AI ===== */
+.tanya-ai-section {
+  max-width: 640px;
+  margin: 2rem auto;
+  padding: 0 1.25rem;
+}
+
+.chat-box {
+  background-color: #fff;
+  border: 1px solid #e4e7eb;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 140px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chat-bubble {
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+.chat-bubble-bot {
+  background-color: #eaf6ea;
+  align-self: flex-start;
+}
+
+.chat-bubble-user {
+  background-color: #2f7d32;
+  color: #fff;
+  align-self: flex-end;
+}
+
+.chat-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background-color: #1f2933;
+  color: #e4e7eb;
+  padding: 2rem 1.25rem 1rem;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: #9aa5b1;
+}
+
+/* ============================================
+   MEDIA QUERIES - breakpoint mobile & desktop
+   ============================================ */
+
+/* Tablet ke atas (>= 640px) */
+@media (min-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop (>= 1024px) */
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 1rem 3rem;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex !important;
+    flex-direction: row;
+    width: auto;
+    background-color: transparent;
+  }
+
+  .nav-menu li {
+    border-top: none;
+  }
+
+  .nav-menu a {
+    padding: 0.5rem 1rem;
+  }
+
+  .hero {
+    padding: 4rem 3rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .preview-produk,
+  .product-list,
+  .produk-header {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
